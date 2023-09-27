@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>It works on my computer!</title>
+
+	<link rel="stylesheet" href="js/reset.css">
+	<link rel="stylesheet" href="js/reveal.css">
+	<link rel="stylesheet" href="js/theme/beige.css">
+	<link rel="stylesheet" href="resources/custom.css">
+
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	<script src="jsspeccy-3.1/jsspeccy/jsspeccy.js"></script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<img src="drawing/it works on my computer_it-works-title.png" alt="presentation logo"
+					style="height: 363px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+				<h3>or the search for repeatable results</h3>
+				<p>
+					<small><a href="https://github.com/osuka">Oscar Amat</a><br />September 2023</small>
+				</p>
+			</section>
+
+			<section>
+				<section data-background="images/wargames.gif">
+					<h2 style="color: antiquewhite;">Computing is hard</h2>
+				</section>
+				<section>
+					<a href="https://www.bbc.co.uk/news/science-environment-39054778">
+						<img src="images/bbc-most-scientists-cant-replicate-studies.png"
+							alt="Most scientists can't replicate studies by their peers"
+							style="height: 600px; margin: 0 auto 4rem auto; background: transparent;">
+					</a>
+				</section>
+				<section>
+					<a
+						href="https://www.smithsonianmag.com/science-nature/scientists-replicated-100-psychology-studies-and-fewer-half-got-same-results-180956426/">
+						<img src="images/smithsonian-scientists-replicated.png"
+							alt="Scientists replicated 100 psychology studies, and fewer than half got the same results"
+							style="height: 600px; margin: 0 auto 4rem auto; background: transparent;">
+					</a>
+				</section>
+
+				<section>
+					<a href="https://github.com/golang/go/issues/62182">
+						<img src="images/golang-issue.png" alt="An openbsd/arm64 github issue for Golang"
+							style="height: 800px; margin: 0 auto 4rem auto; background: transparent;">
+					</a>
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					It wasn't always like this, was it?
+				</section>
+				<section>
+					when I started developing, things seemed a bit easier
+				</section>
+				<section>
+					<div id="jsspeccy" style="margin: 0 auto;"></div>
+					<script>JSSpeccy(document.getElementById('jsspeccy'), {
+							zoom: 2.5,
+							machine: 48,
+							autoStart: true,
+							openUrl: './resources/KillThe.z80.zip'
+						})</script>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<p>Of course it was, I just didn't know...</p>
+				</section>
+				<section>
+					<ul>
+						<li>Libraries!<ul>
+								<li>The C standard library (Libc, glibc, MSVCRT...)</li>
+								<li>.so libraries, DLLs, JARs, kernels...</li>
+							</ul>
+						<li class="fragment">Architectures!<ul>
+								<li>Windows: remember DEC Alpha? CE? Now ARM</li>
+								<li>What did Windows CE even run in?</li>
+								<li>Mac: PowerPC, Intel, M1</li>
+							</ul>
+						</li>
+						<li class="fragment">Resolutions!<ul>
+								<li>Retina, density</li>
+								<li>When a pixel is not a pixel</li>
+							</ul>
+					</ul>
+				</section>
+				<section>
+					<p>"I'm a full stack developer!"</p>
+				</section>
+				<section class="scrollable">
+					<a href="https://en.wikipedia.org/wiki/Microsoft_Windows">
+						<img src="drawing/full stack monkey.png" alt="View of earth strata" />
+					</a>
+				</section>
+				<section class="scrollable">
+					<p>Windows...</p>
+					<a href="https://en.wikipedia.org/wiki/Microsoft_Windows">
+						<img src="images/timeline of windows.png" alt="Windows timeline" />
+					</a>
+				</section>
+				<section class="scrollable">
+					<p>Unix...</p>
+					<a href="https://en.wikipedia.org/wiki/History_of_Unix">
+						<img src="images/Unix_history-simple.svg" alt="The history of Unix in a diagram" />
+					</a>
+				</section>
+				<section>
+					<p>Resolutions</p>
+					<a href="https://en.wikipedia.org/wiki/Computer_display_standard">
+						<img src="images/Vector_Video_Standards2.svg" alt="Computer display standard"
+							style="height: 700px; margin: 0 auto 4rem auto; background: transparent;">
+					</a>
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<h2>This is already solved</h2>
+					<p class="fragment">The year is 1995...</p>
+					<p>
+						<img class="fragment" src="images/Sun-Microsystems-logo-1536x864.png" style="height: 128px;" />
+						<img class="fragment" src="images/java-icon.png" style="height: 128px" />
+					</p>
+					<p class="fragment">Write Once Run Everywhere!</p>
+				</section>
+
+				<section>
+					<p>Write Once Debug Everywhere!</p>
+				</section>
+
+				<section>
+					<h2>This is solved (2)</h2>
+					<p class="fragment">The year is 1999...</p>
+					<p>
+						<img class="fragment" src="images/Sun-Microsystems-logo-1536x864.png" style="height: 128px;" />
+						<img class="fragment" src="images/java-icon.png" style="height: 128px" />
+						<img class="fragment" src="images/ibm-logo.png" style="height: 128px;" />
+					</p>
+					<p class="fragment">Enterprise Java Beans</p>
+				</section>
+
+				<section>
+					<h2>This is solved (3)</h2>
+					<p class="fragment">The year is 2009...</p>
+					<img class="fragment" src="images/Oracle-PNG-Download-Image.png" style="height: 128px;" />
+				</section>
+
+				<section>
+					<h2>...</h2>
+					<h2 class="fragment">This is solved (14)</h2>
+					<img class="fragment" src="images/VMware_logo.png" style="height: 128px;" />
+					<img class="fragment" src="images/KVM-Logo.png" style="height: 128px;" />
+					<img class="fragment" src="images/xen-logo.png" style="height: 128px;" />
+					<img class="fragment" src="images/Virtualbox_logo.png" style="height: 128px;" />
+					<img class="fragment" src="images/Qemu-logo.png" style="height: 128px;" />
+				</section>
+
+				<section>
+					<h2>...</h2>
+					<h2 class="fragment">This is solved (25)</h2>
+					<p class="fragment">2007<img src="images/lxd-logo.png" style="height: 128px;" /></p>
+					<p class="fragment">2013<img src="images/Docker-Logo-2013-2015.png" style="height: 128px;" /></p>
+				</section>
+
+				<section>
+					<h2>...</h2>
+					<h2 class="fragment">This is solved (36)</h2>
+					<p><img class="fragment" src="images/Google_1998_logo.png" style="height: 128px;" /></p>
+					<p><img class="fragment" src="images/Kubernetes_Logo.png" style="height: 128px;" /></p>
+					<p class="fragment">aka Enterprise Java Beans II</p>
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<h2>This is NOT solved</h2>
+					<p class="fragment">I will discuss options and best practices</p>
+					<p class="fragment">Nothing will work 100%</p>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Testing</h1>
+					<img src="drawing/it works on my computer_testing.png" alt="Testing"
+						style="height: 363px; margin: 0 auto 4rem auto; background: transparent;">
+				</section>
+				<section>
+					<h2>Test environments</h2>
+					<ul>
+						<li>Local</li>
+						<li>CI</li>
+						<li>Staging</li>
+						<li>Smoke Test Production (canary)</li>
+						<li>Production Beta (blue/green)</li>
+						<li>Production</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Common ground</h2>
+					<p>Can we use the same tools locally and in production?</p>
+					<p>Huge productivity boost if we can</p>
+				</section>
+			</section>
+
+			<section data-background="images/salt ring.jpg">
+				<h2 style="color:antiquewhite">Isolated development environments</h2>
+			</section>
+
+			<section>
+				<h2>chroot</h2>
+				<p>Before containers, there was chroot.</p>
+				<p>Create a root folder, install barebones OS, link devices. Install code, run.</p>
+				<p>Still an acceptable option</p>
+				<p>Same kernel, same architecture.</p>
+			</section>
+
+			<section>
+				<section class="scrollable">
+					<h2>Containers</h2>
+					<div><img src="images/container-ecosystem.drawio.webp" alt="Container ecosystem diagram"></div>
+				</section>
+
+				<section>
+					<h2>Basic idea</h2>
+					<p>Create a container definition file with all dependencies</p>
+					<p>Build the container, run it with a mounted volume</p>
+					<p>Build/test/debug/watch inside</p>
+					<p>Edit the code and control from outside</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Docker</h2>
+						<p><a href="https://www.docker.com/products/docker-desktop/">Docker desktop</a> -> paid product
+						</p>
+						<p><a href="https://rancherdesktop.io/">Rancher desktop</a> -> free</p>
+					</section>
+				</section>
+				<section>
+					<p>In theory: same kernel, same architecture</p>
+					<p>In reality: multiarch hidden behind rosetta/qemu/lima</p>
+					<img src="images/how-it-works-rancher-desktop.svg"
+						alt="Architecture diagram of rancher desktop components" />
+				</section>
+
+				<section>
+					<h2>Mac OS Containers Initiative</h2>
+					<p>Fresh from the oven <a href="https://macoscontainers.org/">https://macoscontainers.org/</a></p>
+					<p>Provides darwin/arm64 and darwin/amd64 base images and containerd support</p>
+				</section>
+
+				<section data-auto-animate>
+					<h2>Podman</h2>
+					<p>Behaves "Like docker" but no daemon, often run as non-root, replicates cli</p>
+					<p>Runs at the CRI-O level</p>
+					<p>Can use docker images, can build own</p>
+					<p>Can be used with docker-compose (<a
+							href="https://github.com/containers/podman-compose">podman-compose</a>)</p>
+				</section>
+
+				<section data-auto-animate>
+					<h2 data-id="code-title">Podman</h2>
+					<pre data-id="code-animation">
+						<code class="hljs golang" data-trim data-line-numbers><script type="text/template">
+						package main
+						import "fmt"
+
+						func main() {
+								fmt.Println("I'm a hacker")
+						}
+					</script></code>
+					</pre>
+					<pre data-id="code-animation" class="fragment">
+						<code class="hljs dockerfile" data-trim data-line-numbers><script type="text/template">
+							FROM docker.io/library/golang:1.21
+							ADD helloworld.go /
+							CMD [ "go", "run", "/helloworld.go"]
+						</script></code>
+					</pre>
+					<pre data-id="code-animation" class="fragment">
+
+						<code class="hljs sh" data-trim data-line-numbers><script type="text/template">
+							> podman build . -t hellogo
+							STEP 1/3: FROM docker.io/library/golang:1.21
+							STEP 2/3: ADD helloworld.go /
+							--> ddfc736f9d4e
+							STEP 3/3: CMD [ "go", "run", "/helloworld.go"]
+							COMMIT hellogo
+							--> 0775ed882843
+							Successfully tagged localhost/hellogo:latest
+							0775ed882843d78586c2585d4871a30aad33e0c08de3896e4a8b8959992753b4
+							
+							> podman run -it --rm hellogo
+							"I'm a hacker"
+						</script></code>
+					</pre>
+
+					<pre data-id="code-animation" class="fragment">
+
+						<code class="hljs sh" data-trim data-line-numbers><script type="text/template">
+							> podman images localhost/hellogo
+							REPOSITORY         TAG         IMAGE ID      CREATED        SIZE
+							localhost/hellogo  latest      0775ed882843  3 minutes ago  838 MB
+						</script></code></pre>
+
+				</section>
+
+				<section>
+					<pre data-id="code-animation">
+						<code class="hljs sh" data-trim data-line-numbers><script type="text/template">
+							> podman image inspect localhost/hellogo
+						</script></code></pre>
+				</section>
+
+				<section>
+					<pre data-id="code-animation">
+						<code class="hljs json" data-trim data-line-numbers><script type="text/template">
+							[{
+								"Config": {
+									"Cmd": ["go", "run", "/helloworld.go"],
+									"WorkingDir": "/go",
+								},
+								...
+								"Architecture": "amd64",
+								"Os": "linux",
+								...
+							}
+						</script></code></pre>
+				</section>
+
+				<section>
+					<pre data-id="code-animation">
+						<code class="hljs sh" data-trim data-line-numbers><script type="text/template">
+							> podman build . -t hellogo --arch=arm64
+
+							> podman image inspect localhost/hellogo
+							...
+							"Architecture": "arm64",
+							"Os": "linux",
+
+							> podman run -it --rm hellogo
+							WARNING: image platform (linux/arm64/v8) does not match the expected platform (linux/amd64)
+							exec /usr/local/go/bin/go: exec format error
+						</script></code></pre>
+				</section>
+
+				<section>
+					<pre data-id="code-animation">
+						<code class="hljs sh" data-trim data-line-numbers><script type="text/template">
+							 > podman image rm hellogo
+							> podman buildx build --platform linux/arm64 --platform linux/amd64 -t hellogo .
+							[linux/amd64] STEP 1/3: FROM docker.io/library/golang:1.21
+							Successfully tagged localhost/hellogo:latest
+							c5f68221938bf982c23a6971c0a063e46eb762664e45b683c10c10dc6deca466
+							...
+							[linux/arm64] STEP 1/3: FROM docker.io/library/golang:1.21
+							...
+							Successfully tagged localhost/hellogo:latest
+							fec412bda1ccd42ea1de2dbb0a297d8261881dce949a6768d5a24d5f5d2b4551
+							
+							> podman image inspect localhost/hellogo | rg Arch
+							"Architecture": "arm64",
+
+							> podman image inspect fec412bda1ccd42ea1de2dbb0a297d8261881dce949a6768d5a24d5f5d2b4551 | rg Arch
+							"Architecture": "arm64",
+							
+							> podman image inspect c5f68221938bf982c23a6971c0a063e46eb762664e45b683c10c10dc6deca466 | rg Arch
+							"Architecture": "amd64",
+						</script></code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>Virtual Machines: Vagrant</h2>
+					<ul>
+						<li>Create and manage VMs programmatically
+							<ul>
+								<li>(Vagrant "boxes")</li>
+							</ul>
+						</li>
+						<li>Depends on having a Hypervisor
+							<ul>
+								<li>(virtualbox, qemu etc)</li>
+							</ul>
+						</li>
+						<li>Ruby and lots of scripting</li>
+						<li>Now owned by Hashicorp</li>
+					</ul>
+				</section>
+				<section>
+					<p>Example: <a href="https://github.com/vancanhuit/vagrant-k8s/blob/main/Vagrantfile">creating a
+							kubernetes cluster</a></p>
+					<pre data-id="code-animation" class="fragment">
+						<code class="hljs ruby" data-trim data-line-numbers><script type="text/template">
+							Vagrant.configure("2") do |config|
+							config.vm.box = "bento/debian-12"
+
+							config.vm.provider "virtualbox" do |vb|
+								vb.memory = 2048
+								vb.cpus = 2
+							end
+
+							config.vm.define "master" do |node|
+								node.vm.hostname = "master"
+								node.vm.network "private_network", ip: "192.168.56.10"
+							end
+
+							(1..2).each do |i|
+								config.vm.define "worker-#{i}" do |node|
+								node.vm.hostname = "worker-#{i}"
+								node.vm.network "private_network", ip: "192.168.56.#{10 + i}"
+								end
+							end
+
+							config.vm.provision "shell", name: "install-essential-tools", path: "install-essential-tools.sh", privileged: false
+							config.vm.provision "shell", name: "allow-bridge-nf-traffic", path: "allow-bridge-nf-traffic.sh", privileged: false
+							config.vm.provision "shell", name: "install-containerd", path: "install-containerd.sh", privileged: false
+							config.vm.provision "shell", name: "install-kubeadm", path: "install-kubeadm.sh", privileged: false
+							config.vm.provision "shell", name: "update-kubelet-config", path: "update-kubelet-config.sh", args: ["eth1"], privileged: false
+							end
+						</script></code></pre>
+
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Nix and NixOS</h2>
+					<p><a href="https://nixos.org/">https://nixos.org/</a></p>
+					<p>Nix is a "functional package manager"</p>
+					<ul>
+						<li>Reproducible</li>
+						<li>Declarative</li>
+						<li>Supports atomic upgrades and rollbacks</li>
+						<li>Runs on Linux and Mac OS X</li>
+					</ul>
+
+				</section>
+				<section>
+					<p>Nix allows you to define environments declaratively and enter and leave them</p>
+					<p>NixOS does the same at he OS level - a whole Linux system declaratively setup</p>
+					<p>Uses a language called Nix too, because nobody said life would be easy</p>
+				</section>
+			</section>
+
+
+
+		</div>
+	</div>
+
+	<script src="js/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
