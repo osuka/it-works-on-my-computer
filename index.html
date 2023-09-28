@@ -164,10 +164,10 @@
 
 				<section>
 					<h2>...</h2>
-					<h2 class="fragment">This is solved (14)</h2>
+					<h4 class="fragment">This is solved (14)</h4>
 					<img class="fragment" src="images/VMware_logo.png" style="height: 128px;" />
 					<img class="fragment" src="images/KVM-Logo.png" style="height: 128px;" />
-					<img class="fragment" src="images/xen-logo.png" style="height: 128px;" />
+					<img class="fragment" src="images/Xen-Logo-1-8883.png" style="height: 128px;" />
 					<img class="fragment" src="images/Virtualbox_logo.png" style="height: 128px;" />
 					<img class="fragment" src="images/Qemu-logo.png" style="height: 128px;" />
 				</section>
@@ -192,14 +192,13 @@
 			<section>
 				<section>
 					<h2>This is NOT solved</h2>
-					<p class="fragment">I will discuss options and best practices</p>
-					<p class="fragment">Nothing will work 100%</p>
+					<p>But let's take a look at options</p>
 				</section>
 			</section>
 
 			<section>
 				<section>
-					<h1>Testing</h1>
+					<h1>Focus on Testing</h1>
 					<img src="drawing/it works on my computer_testing.png" alt="Testing"
 						style="height: 363px; margin: 0 auto 4rem auto; background: transparent;">
 				</section>
@@ -247,57 +246,67 @@
 					<p>Edit the code and control from outside</p>
 				</section>
 
+			</section>
+
+			<section>
 				<section>
-					<section>
-						<h2>Docker</h2>
-						<p><a href="https://www.docker.com/products/docker-desktop/">Docker desktop</a> -> paid product
-						</p>
-						<p><a href="https://rancherdesktop.io/">Rancher desktop</a> -> free</p>
-					</section>
+					<h2>Docker</h2>
+					<p><a href="https://www.docker.com/products/docker-desktop/">Docker desktop</a> -> paid product
+					</p>
+					<p><a href="https://rancherdesktop.io/">Rancher desktop</a> -> free</p>
 				</section>
+				<section>
+					<p>A good, safe option</p>
+					<p>Be aware of
+					<p>
+					<ul>
+						<li>caching</li>
+						<li>apt-get update etc</li>
+						<li>multiarch support</li>
+						<li>networking</li>
+						<li>storage</li>
+						<li>permissions</li>
+					</ul>
+				</section>
+
 				<section>
 					<p>In theory: same kernel, same architecture</p>
 					<p>In reality: multiarch hidden behind rosetta/qemu/lima</p>
-					<img src="images/how-it-works-rancher-desktop.svg"
-						alt="Architecture diagram of rancher desktop components" />
+					<img src="images/how-it-works-rancher-desktop.svg" alt="Architecture diagram of rancher desktop components" />
 				</section>
+			</section>
 
+			<section>
+				<h2>Podman</h2>
 				<section>
-					<h2>Mac OS Containers Initiative</h2>
-					<p>Fresh from the oven <a href="https://macoscontainers.org/">https://macoscontainers.org/</a></p>
-					<p>Provides darwin/arm64 and darwin/amd64 base images and containerd support</p>
-				</section>
-
-				<section data-auto-animate>
-					<h2>Podman</h2>
 					<p>Behaves "Like docker" but no daemon, often run as non-root, replicates cli</p>
 					<p>Runs at the CRI-O level</p>
 					<p>Can use docker images, can build own</p>
-					<p>Can be used with docker-compose (<a
-							href="https://github.com/containers/podman-compose">podman-compose</a>)</p>
+					<p>Can be used with docker-compose (<a href="https://github.com/containers/podman-compose">podman-compose</a>)
+					</p>
 				</section>
 
 				<section data-auto-animate>
-					<h2 data-id="code-title">Podman</h2>
-					<pre data-id="code-animation">
+					<pre>
 						<code class="hljs golang" data-trim data-line-numbers><script type="text/template">
 						package main
 						import "fmt"
-
+	
 						func main() {
 								fmt.Println("I'm a hacker")
 						}
-					</script></code>
+						</script></code>
 					</pre>
-					<pre data-id="code-animation" class="fragment">
+					<pre>
 						<code class="hljs dockerfile" data-trim data-line-numbers><script type="text/template">
 							FROM docker.io/library/golang:1.21
 							ADD helloworld.go /
 							CMD [ "go", "run", "/helloworld.go"]
 						</script></code>
 					</pre>
-					<pre data-id="code-animation" class="fragment">
-
+				</section>
+				<section>
+					<pre>
 						<code class="hljs sh" data-trim data-line-numbers><script type="text/template">
 							> podman build . -t hellogo
 							STEP 1/3: FROM docker.io/library/golang:1.21
@@ -308,31 +317,31 @@
 							--> 0775ed882843
 							Successfully tagged localhost/hellogo:latest
 							0775ed882843d78586c2585d4871a30aad33e0c08de3896e4a8b8959992753b4
-							
 							> podman run -it --rm hellogo
 							"I'm a hacker"
 						</script></code>
 					</pre>
 
-					<pre data-id="code-animation" class="fragment">
+					<section>
+						<pre data-id="code-animation" class="fragment">
 
 						<code class="hljs sh" data-trim data-line-numbers><script type="text/template">
 							> podman images localhost/hellogo
 							REPOSITORY         TAG         IMAGE ID      CREATED        SIZE
 							localhost/hellogo  latest      0775ed882843  3 minutes ago  838 MB
 						</script></code></pre>
-
+					</section>
 				</section>
 
 				<section>
-					<pre data-id="code-animation">
+					<pre>
 						<code class="hljs sh" data-trim data-line-numbers><script type="text/template">
 							> podman image inspect localhost/hellogo
 						</script></code></pre>
 				</section>
 
 				<section>
-					<pre data-id="code-animation">
+					<pre>
 						<code class="hljs json" data-trim data-line-numbers><script type="text/template">
 							[{
 								"Config": {
@@ -348,15 +357,15 @@
 				</section>
 
 				<section>
-					<pre data-id="code-animation">
+					<pre>
 						<code class="hljs sh" data-trim data-line-numbers><script type="text/template">
 							> podman build . -t hellogo --arch=arm64
-
+	
 							> podman image inspect localhost/hellogo
 							...
 							"Architecture": "arm64",
 							"Os": "linux",
-
+	
 							> podman run -it --rm hellogo
 							WARNING: image platform (linux/arm64/v8) does not match the expected platform (linux/amd64)
 							exec /usr/local/go/bin/go: exec format error
@@ -364,7 +373,7 @@
 				</section>
 
 				<section>
-					<pre data-id="code-animation">
+					<pre>
 						<code class="hljs sh" data-trim data-line-numbers><script type="text/template">
 							 > podman image rm hellogo
 							> podman buildx build --platform linux/arm64 --platform linux/amd64 -t hellogo .
@@ -379,7 +388,7 @@
 							
 							> podman image inspect localhost/hellogo | rg Arch
 							"Architecture": "arm64",
-
+	
 							> podman image inspect fec412bda1ccd42ea1de2dbb0a297d8261881dce949a6768d5a24d5f5d2b4551 | rg Arch
 							"Architecture": "arm64",
 							
@@ -387,23 +396,48 @@
 							"Architecture": "amd64",
 						</script></code></pre>
 				</section>
+
 			</section>
 
 			<section>
+				<h2>Mac OS Containers Initiative</h2>
+				<p>Fresh from the oven <a href="https://macoscontainers.org/">https://macoscontainers.org/</a></p>
+				<p>Provides darwin/arm64 and darwin/amd64 base images and containerd support</p>
+			</section>
+
+
+			<section>
 				<section>
-					<h2>Virtual Machines: Vagrant</h2>
+					<h2>Virtual Machines</h2>
+					<p>Isolate a whole machine</p>
+					<p>Issue: many, many options</p>
+					<p>Issue: sharing, repeatability</p>
+					<p>Can end up being its own "PC"</p>
+					<p class="fragment">It works on my VM!</p>
+				</section>
+				<section>
+					<h2>Options</h2>
+					<p>Too much to discuss. Recommed virt-manager or utm</p>
+					<ul>
+						<li>VMWare ($), Xen (overkill), Virtualbox (Oracle!), KVM (linux), Hypervisor.framework (mac)</li>
+						<li>QEMU (emulator and virtualizer, to tie them all)</li>
+						<li><a href="https://libvirt.org/">libvirt</a> to make it easy</li>
+						<li><a href="https://virt-manager.org/">Virt-manager</a> to make it easier</li>
+						<li><a href="https://mac.getutm.app/">UTM</a> (mac) for dummies</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Vagrant</h2>
 					<ul>
 						<li>Create and manage VMs programmatically
 							<ul>
 								<li>(Vagrant "boxes")</li>
+								<li>Shareable</li>
 							</ul>
 						</li>
-						<li>Depends on having a Hypervisor
-							<ul>
-								<li>(virtualbox, qemu etc)</li>
-							</ul>
-						</li>
+						<li>Depends on having a Hypervisor</li>
 						<li>Ruby and lots of scripting</li>
+						<li>A VM can be non-deterministic</li>
 						<li>Now owned by Hashicorp</li>
 					</ul>
 				</section>
@@ -439,7 +473,10 @@
 							config.vm.provision "shell", name: "update-kubelet-config", path: "update-kubelet-config.sh", args: ["eth1"], privileged: false
 							end
 						</script></code></pre>
-
+				</section>
+				<section>
+					<p>IMHO: VMs/Vagrant are not great for development</p>
+					<p>Heavy, slow, finicky</p>
 				</section>
 			</section>
 			<section>
@@ -463,7 +500,8 @@
 						<li>Create a development environment</li>
 						<li>Use it to build and to develop</li>
 						<li>Shared flake.nix and flake.lock</li>
-					</ul></p>
+					</ul>
+					</p>
 				</section>
 				<section>
 					<p>NixOS takes it to another level</p>
@@ -472,8 +510,72 @@
 				</section>
 			</section>
 
+			<section>
+				<h2>Random things to keep in mind</h2>
+				<img src="images/notice to mariners.jpg" alt="notice to mariners">
+			</section>
 
+			<section>
+				<h2>C-Library</h2>
+				<p>Alpine Linux uses musl instead of glibc</p>
+				<p>Musl has notable differences, in particular in DNS</p>
+				<p>More <a href="https://wiki.musl-libc.org/functional-differences-from-glibc.html">here</a></p>
+				<p>Alpine was all the rage because of size, but it's dangerous</p>
+				<small>musl's resolver did not support the use of DNS over TCP until version 1.2.4. This difference prevented
+					the use of larger packets produced by protocols such as DNSSEC and DKIM.</small>
+			</section>
 
+			<section>
+				<h2>Docker caching</h2>
+				<p>Docker caches by the actual text of a line</p>
+				<p>Generates a hash and goes with it</p>
+				<p>Anything that can change, eg LATEST or curl https://thisthing.com/release/3.8 instead of 3.8.1</p>
+				<p>should be avoided</p>
+			</section>
+
+			<section>
+				<h2>Lock files</h2>
+				<p>Save lock files to CI</p>
+				<p>Make sure test and production use the same deps</p>
+				<p>Make sure dev/test/ci use same architecture
+				<small>eg terraform had architecture-dependendant hashes</small>
+			</section>
+
+			<section>
+				<h2>Virtualenvs</h2>
+				<p>Python's virtual environments are great to support multiple versions</p>
+				<p>But they are not kept updated automatically</p>
+				<p>When did you last update your venv?</p>
+			</section>
+
+			<section>
+				<h2>jenv, nvm, rvm, ...</h2>
+				<p>Version managers for java, node, ruby...</p>
+				<p>They can be good if you are cli-orientated and/or your IDE detects them</p>
+				<p>It is convenient to have '18' as .nvmrc but risky</p>
+				<p>Use full versions</p>
+			</section>
+
+			<section>
+				<h2>Devcontainers for Visual Studio Code</h2>
+				<p>Allows defining a container with all that is needed for your app
+				<p>
+				<p>Visual studio launches it, connects to it using vscode-server</p>
+				<p>UI runs on your machine, everything else in container</p>
+				<p>Excellent performance</p>
+				<p>Does port mapping for you (!)</p>
+				<p>Can be shared in project
+				<p>
+			</section>
+
+			<section>
+				<h2>Remoting for Visual Studio Code</h2>
+				<p>Allows connecting to any VM/EC2 instances/Lab machine
+				<p>
+				<p>Uses vscode-server</p>
+				<p>Very useful if your PC/laptop is struggling
+				<p>
+			</section>
 		</div>
 	</div>
 
