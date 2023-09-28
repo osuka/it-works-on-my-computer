@@ -514,68 +514,78 @@
 				<h2>Random things to keep in mind</h2>
 				<img src="images/notice to mariners.jpg" alt="notice to mariners">
 			</section>
-
 			<section>
-				<h2>C-Library</h2>
-				<p>Alpine Linux uses musl instead of glibc</p>
-				<p>Musl has notable differences, in particular in DNS</p>
-				<p>More <a href="https://wiki.musl-libc.org/functional-differences-from-glibc.html">here</a></p>
-				<p>Alpine was all the rage because of size, but it's dangerous</p>
-				<small>musl's resolver did not support the use of DNS over TCP until version 1.2.4. This difference prevented
-					the use of larger packets produced by protocols such as DNSSEC and DKIM.</small>
+				<section>
+					<h2>C-Library</h2>
+					<p>Alpine Linux uses musl instead of glibc</p>
+					<p>Musl has notable differences, in particular in DNS</p>
+					<p>More <a href="https://wiki.musl-libc.org/functional-differences-from-glibc.html">here</a></p>
+					<p>Alpine was all the rage because of size, but it's dangerous</p>
+					<small>musl's resolver did not support the use of DNS over TCP until version 1.2.4. This difference prevented
+						the use of larger packets produced by protocols such as DNSSEC and DKIM.</small>
+				</section>
+
+				<section>
+					<h2>You can control time</h2>
+					<p>If you search for sleep in your tests and find results, trouble</p>
+					<p>Mock time, mock ticks</p>
+					<p>CPUs move at different speeds, devs/servers work in different time zones</p>
+					<p>
+				</section>
+
+				<section>
+					<h2>Docker caching</h2>
+					<p>Docker caches by the actual text of a line</p>
+					<p>Generates a hash and goes with it</p>
+					<p>Anything that can change, eg LATEST or curl https://thisthing.com/release/3.8 instead of 3.8.1</p>
+					<p>should be avoided</p>
+				</section>
+
+				<section>
+					<h2>Lock files</h2>
+					<p>Save lock files to CI</p>
+					<p>Make sure test and production use the same deps</p>
+					<p>Make sure dev/test/ci use same architecture
+						<small>eg terraform had architecture-dependendant hashes</small>
+				</section>
+
+				<section>
+					<h2>Virtualenvs</h2>
+					<p>Python's virtual environments are great to support multiple versions</p>
+					<p>But they are not kept updated automatically</p>
+					<p>When did you last update your venv?</p>
+				</section>
+
+				<section>
+					<h2>jenv, nvm, rvm, ...</h2>
+					<p>Version managers for java, node, ruby...</p>
+					<p>They can be good if you are cli-orientated and/or your IDE detects them</p>
+					<p>It is convenient to have '18' as .nvmrc but risky</p>
+					<p>Use full versions</p>
+				</section>
+
+				<section>
+					<h2>Devcontainers for Visual Studio Code</h2>
+					<p>Allows defining a container with all that is needed for your app
+					<p>
+					<p>Visual studio launches it, connects to it using vscode-server</p>
+					<p>UI runs on your machine, everything else in container</p>
+					<p>Excellent performance</p>
+					<p>Does port mapping for you (!)</p>
+					<p>Can be shared in project
+					<p>
+				</section>
+
+				<section>
+					<h2>Remoting for Visual Studio Code</h2>
+					<p>Allows connecting to any VM/EC2 instances/Lab machine
+					<p>
+					<p>Uses vscode-server</p>
+					<p>Very useful if your PC/laptop is struggling
+					<p>
+				</section>
 			</section>
 
-			<section>
-				<h2>Docker caching</h2>
-				<p>Docker caches by the actual text of a line</p>
-				<p>Generates a hash and goes with it</p>
-				<p>Anything that can change, eg LATEST or curl https://thisthing.com/release/3.8 instead of 3.8.1</p>
-				<p>should be avoided</p>
-			</section>
-
-			<section>
-				<h2>Lock files</h2>
-				<p>Save lock files to CI</p>
-				<p>Make sure test and production use the same deps</p>
-				<p>Make sure dev/test/ci use same architecture
-				<small>eg terraform had architecture-dependendant hashes</small>
-			</section>
-
-			<section>
-				<h2>Virtualenvs</h2>
-				<p>Python's virtual environments are great to support multiple versions</p>
-				<p>But they are not kept updated automatically</p>
-				<p>When did you last update your venv?</p>
-			</section>
-
-			<section>
-				<h2>jenv, nvm, rvm, ...</h2>
-				<p>Version managers for java, node, ruby...</p>
-				<p>They can be good if you are cli-orientated and/or your IDE detects them</p>
-				<p>It is convenient to have '18' as .nvmrc but risky</p>
-				<p>Use full versions</p>
-			</section>
-
-			<section>
-				<h2>Devcontainers for Visual Studio Code</h2>
-				<p>Allows defining a container with all that is needed for your app
-				<p>
-				<p>Visual studio launches it, connects to it using vscode-server</p>
-				<p>UI runs on your machine, everything else in container</p>
-				<p>Excellent performance</p>
-				<p>Does port mapping for you (!)</p>
-				<p>Can be shared in project
-				<p>
-			</section>
-
-			<section>
-				<h2>Remoting for Visual Studio Code</h2>
-				<p>Allows connecting to any VM/EC2 instances/Lab machine
-				<p>
-				<p>Uses vscode-server</p>
-				<p>Very useful if your PC/laptop is struggling
-				<p>
-			</section>
 		</div>
 	</div>
 
